@@ -1,31 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
   const app = document.getElementById("app");
+  const searchBtn = document.getElementById("searchBtn");
+  const searchInput = document.getElementById("searchInput");
+  const titleEl = document.getElementById("title");
 
   let page = 1;
   const perPage = 10;
+  let currentQuery = "";
 
-  // container for posts
   const postsContainer = document.createElement("div");
   app.appendChild(postsContainer);
 
-  // load more button
   const loadMoreBtn = document.createElement("button");
   loadMoreBtn.innerText = "Load More";
-  loadMoreBtn.style.margin = "20px auto";
   loadMoreBtn.style.display = "block";
-
+  loadMoreBtn.style.margin = "40px auto";
   app.appendChild(loadMoreBtn);
 
-  function fetchPosts() {
-    loadMoreBtn.innerText = "Loading...";
+  function fetchPosts(reset = false) {
+    if (reset) {
+      page = 1;
+      postsContainer.innerHTML = "";
+    }
 
-    fetch(`https://api.allorigins.win/raw?url=https://jamestownco.org/wp-json/wp/v2/posts?per_page=${perPage}&page=${page}`)
-      .then(res => {
-        if (!res.ok) throw new Error("No more posts");
-        return res.json();
-      })
+    const url = `https://corsproxy.io/?https://jamestownco.org/wp-json/wp/v2/posts?per_page=${perPage}&page=${page}&search=${currentQuery}`;
+
+    fetch(url)
+      .then(res => res.json())
       .then(posts => {
-        posts.forEach(post => {
+        if (!posts || posts.length === 0) return;
+
+        posts.forEach((post, index) => {
+
+          // 🔥 GLOBAL INDEX (fixes duplication bug)
+          const globalIndex = (page - 1) * perPage + index;
+
+          // 👉 insert image every 3 posts
+          if (globalIndex > 0 && globalIndex % 3 === 0) {
+            const imageSection = document.createElement("div");
+            imageSection.className = "parallax";
+
+            const images = [
+              "https://jamestownco.org/wp-content/uploads/2026/03/hero_image.png",
+              "https://jamestownco.org/wp-content/uploads/2026/03/porphyry-scaled.png"
+            ];
+
+            const imgIndex = Math.floor(globalIndex / 3) % images.length;
+            imageSection.style.backgroundImage = `url('${images[imgIndex]}')`;
+
+            postsContainer.appendChild(imageSection);
+          }
+
+          // 👉 post card
           const card = document.createElement("div");
           card.className = "card";
 
@@ -38,17 +64,42 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         page++;
-        loadMoreBtn.innerText = "Load More";
       })
-      .catch(() => {
-        loadMoreBtn.innerText = "No more posts";
-        loadMoreBtn.disabled = true;
+      .catch(err => {
+        console.error("FETCH ERROR:", err);
       });
   }
 
-  // first load
+  // initial load
   fetchPosts();
 
-  // click to load more
-  loadMoreBtn.addEventListener("click", fetchPosts);
+  // load more
+  loadMoreBtn.addEventListener("click", () => fetchPosts());
+
+  // search
+  searchBtn.addEventListener("click", () => {
+    currentQuery = searchInput.value;
+    fetchPosts(true);
+  });
+
+  searchInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      currentQuery = searchInput.value;
+      fetchPosts(true);
+    }
+  });
+
+  // ✨ typewriter title
+  const text = "Town of Jamestown";
+  let i = 0;
+
+  function typeWriter() {
+    if (i < text.length) {
+      titleEl.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 80);
+    }
+  }
+
+  typeWriter();
 });

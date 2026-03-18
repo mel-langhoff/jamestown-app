@@ -2,13 +2,63 @@
 <html>
 <head>
   <title>Jamestown App</title>
+
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <div id="app"></div>
+<header class="site-header">
+  <div class="header-left">
+    <div class="title" id="title"></div>
+    <div class="subtitle">Incorporated in 1883</div>
+  </div>
 
-  <script src="app.js"></script>
+  <nav class="header-nav">
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search..." />
+      <button id="searchBtn">🔍</button>
+    </div>
+
+    <ul>
+      <li><a href="#">Home</a></li>
+
+      <li class="dropdown">
+        <a href="#">About ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">History</a></li>
+          <li><a href="#">Team</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Projects ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Work</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+  </nav>
+</header>
+
+<!-- ✅ FIXED HERO -->
+<section class="hero">
+  <img 
+    src="https://jamestownco.org/wp-content/uploads/2026/03/hero_image.png" 
+    alt="Jamestown painting"
+    class="hero-img"
+  >
+</section>
+
+<div id="app"></div>
+
+<script src="app.js"></script>
+
 </body>
 </html>
