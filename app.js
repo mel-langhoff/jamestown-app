@@ -28,15 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(url)
       .then(res => res.json())
       .then(posts => {
-        if (!posts || posts.length === 0) return;
+        console.log("POSTS:", posts);
+
+        if (!posts || posts.length === 0) {
+          loadMoreBtn.innerText = "No more posts";
+          loadMoreBtn.disabled = true;
+          return;
+        }
 
         posts.forEach((post, index) => {
-
-          // 🔥 GLOBAL INDEX (fixes duplication bug)
           const globalIndex = (page - 1) * perPage + index;
 
-          // 👉 insert image every 3 posts
-          if (globalIndex > 0 && globalIndex % 3 === 0) {
+          // 👉 insert image every 2 posts
+          if (globalIndex > 0 && globalIndex % 2 === 0) {
             const imageSection = document.createElement("div");
             imageSection.className = "parallax";
 
@@ -45,13 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
               "https://jamestownco.org/wp-content/uploads/2026/03/porphyry-scaled.png"
             ];
 
-            const imgIndex = Math.floor(globalIndex / 3) % images.length;
+            const imgIndex = Math.floor(globalIndex / 2) % images.length;
             imageSection.style.backgroundImage = `url('${images[imgIndex]}')`;
 
             postsContainer.appendChild(imageSection);
           }
 
-          // 👉 post card
+          // 👉 post
           const card = document.createElement("div");
           card.className = "card";
 
@@ -64,9 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         page++;
+        loadMoreBtn.innerText = "Load More";
       })
       .catch(err => {
         console.error("FETCH ERROR:", err);
+        loadMoreBtn.innerText = "Error loading posts";
       });
   }
 
