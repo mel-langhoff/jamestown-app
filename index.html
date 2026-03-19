@@ -1,69 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Jamestown App</title>
+  <title>Jamestown</title>
 
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header class="site-header">
-  <div class="header-left">
-    <div class="title" id="title"></div>
-    <div class="subtitle">Incorporated in 1883</div>
-  </div>
+  <div class="title">Jamestown</div>
 
   <nav class="header-nav">
-
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Search..." />
-      <button id="searchBtn">🔍</button>
-    </div>
-
-    <ul>
-      <li><a href="#">Home</a></li>
-
-      <li class="dropdown">
-        <a href="#">About ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">History</a></li>
-          <li><a href="#">Team</a></li>
-        </ul>
-      </li>
-
-      <li class="dropdown">
-        <a href="#">Projects ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Work</a></li>
-        </ul>
-      </li>
-
-      <li><a href="#">Contact</a></li>
-    </ul>
-
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
   </nav>
+
+  <div class="header-logo">
+    <img src="https://jamestownco.org/wp-content/uploads/2026/03/bear_sign.png">
+  </div>
 </header>
 
-<!-- ===== HERO IMAGE ===== -->
 <section class="hero">
-  <img src="hero_image.png" class="hero-img">
+
+  <img src="https://jamestownco.org/wp-content/uploads/2026/03/gjhgjgj.png">
+
+  <!-- ✍️ SVG WRITING TEXT -->
+  <div class="hero-text">
+    <svg viewBox="0 0 1200 300">
+      <text x="50%" y="50%" text-anchor="middle" class="draw-text">
+        Town of Jamestown
+      </text>
+    </svg>
+
+    <div class="hero-subtitle">Incorporated in 1883</div>
+  </div>
+
 </section>
 
-<!-- ===== PARALLAX BREAK ===== -->
-<section class="parallax" style="background-image: url('mountains.png');"></section>
-
-<!-- ===== SECOND IMAGE (OPTIONAL — CHANGE THIS FILE) ===== -->
-<section class="hero">
-  <img src="second_image.png" class="hero-img">
-</section>
-
-<!-- ===== MAIN CONTENT ===== -->
 <div id="app"></div>
 
-<script src="app.js"></script>
-
+<script src="app.js?v=4"></script>
 </body>
 </html>
