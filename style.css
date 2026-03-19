@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   padding-top: 100px;
+  background: #F5F1E8;
 }
 
 /* HEADER */
@@ -10,32 +11,106 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 100px;
+  height: 100px; /* 👈 back to 100px */
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 20px;
-  background: white;
+  padding: 0 40px;
+
+  background: #F5F1E8;
+  border-bottom: 1px solid black;
+
   z-index: 1000;
 }
 
+/* NAV */
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.header-nav ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav li {
+  position: relative;
+}
+
 .header-nav a {
-  margin: 0 10px;
   text-decoration: none;
   color: black;
+  font-size: 16px;
+  padding: 10px 15px;
+  display: block;
+  white-space: nowrap;
+}
+
+/* DROPDOWN */
+
+.header-nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+
+  background: white;
+  min-width: 220px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  z-index: 999;
+}
+
+.header-nav li:hover > ul {
+  display: block;
+}
+
+/* DROPDOWN ITEMS */
+
+.header-nav ul ul a {
+  padding: 12px 20px;
+}
+
+.header-nav ul ul a:hover {
+  background: #f5f5f5;
+}
+
+/* 🔥 LOGO HANGING EFFECT */
+
+/* LOGO FIX */
+
+/* LOGO CONTAINER */
+
+.header-logo {
+  position: relative;
+  width: 30%;
+  min-width: 120px;
 }
 
 .header-logo img {
-  height: 60px;
+  position: absolute;
+  right: 0;
+
+  width: 100%;
+  height: auto;
+
+  top: 0;
+  transform: translateY(-20%); /* 👈 THIS is the magic */
 }
 
 /* HERO */
 
 .hero {
   position: relative;
-  overflow: hidden;
 }
 
 .hero img {
@@ -43,7 +118,7 @@ body {
   display: block;
 }
 
-/* ✍️ TEXT CONTAINER */
+/* TEXT */
 
 .hero-text {
   position: absolute;
@@ -53,11 +128,11 @@ body {
   width: 90%;
 }
 
-/* ✍️ SVG TEXT */
+/* SVG TEXT */
 
 .draw-text {
-  font-family: cursive;
-  font-size: 120px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 160px;
 
   fill: none;
   stroke: white;
@@ -68,25 +143,29 @@ body {
 
   animation: draw 4s ease forwards;
 
-  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.7));
+  letter-spacing: 3px;
+
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.8));
 }
 
-/* ✨ SUBTITLE */
+/* SUBTITLE */
 
 .hero-subtitle {
   text-align: center;
   color: white;
   font-size: 28px;
-  margin-top: 20px;
+  font-family: 'Great Vibes', cursive;
+
+  margin-top: -10px;
 
   opacity: 0;
   animation: fadeIn 2s ease forwards;
-  animation-delay: 3s;
+  animation-delay: 2s;
 
   text-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
-/* ✨ ANIMATIONS */
+/* ANIMATIONS */
 
 @keyframes draw {
   to {
