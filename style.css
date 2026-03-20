@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   padding-top: 100px;
   background: #F5F1E8;
 }
@@ -11,7 +11,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 100px; /* 👈 back to 100px */
+  height: 200px;
 
   display: flex;
   align-items: center;
@@ -28,13 +28,12 @@ body {
 /* NAV */
 
 .header-nav {
-  display: flex;
-  align-items: center;
-  margin-right: auto;
+  flex: 1;
 }
 
 .header-nav ul {
   display: flex;
+  justify-content: flex-end;
   gap: 40px;
   list-style: none;
   margin: 0;
@@ -46,12 +45,12 @@ body {
 }
 
 .header-nav a {
+  font-family: 'Playfair Display', serif;
   text-decoration: none;
   color: black;
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px 15px;
   display: block;
-  white-space: nowrap;
 }
 
 /* DROPDOWN */
@@ -61,22 +60,20 @@ body {
   position: absolute;
   top: 100%;
   right: 0;
-  left: auto;
 
   background: white;
-  min-width: 220px;
+  min-width: 250px;
 
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  z-index: 999;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .header-nav li:hover > ul {
   display: block;
 }
 
-/* DROPDOWN ITEMS */
-
 .header-nav ul ul a {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 15px;
   padding: 12px 20px;
 }
 
@@ -84,55 +81,56 @@ body {
   background: #f5f5f5;
 }
 
-/* 🔥 LOGO HANGING EFFECT */
-
-/* LOGO FIX */
-
-/* LOGO CONTAINER */
+/* LOGO */
 
 .header-logo {
   position: relative;
-  width: 30%;
-  min-width: 120px;
+  width: 300px;
+  height: 100%; /* 👈 match header height */
 }
 
 .header-logo img {
   position: absolute;
   right: 0;
 
-  width: 100%;
-  height: auto;
+  height: 100%;   /* 👈 fill header height */
+  width: auto;
 
-  top: 0;
-  transform: translateY(-20%); /* 👈 THIS is the magic */
+  top: 50%;
+  transform: translateY(-50%); /* 👈 center vertically */
 }
 
 /* HERO */
 
 .hero {
   position: relative;
+  height: calc(100vh - 100px);
+  overflow: hidden;
 }
 
 .hero img {
   width: 100%;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+/* HERO TEXT */
+
+.hero-text {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  text-align: center;
 }
 
 /* TEXT */
 
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-}
-
-/* SVG TEXT */
-
 .draw-text {
   font-family: 'Great Vibes', cursive;
-  font-size: 160px;
+  font-size: clamp(60px, 10vw, 160px);
 
   fill: none;
   stroke: white;
@@ -142,30 +140,20 @@ body {
   stroke-dashoffset: 2000;
 
   animation: draw 4s ease forwards;
-
-  letter-spacing: 3px;
-
-  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.8));
 }
 
-/* SUBTITLE */
-
 .hero-subtitle {
-  text-align: center;
-  color: white;
-  font-size: 28px;
+  font-size: clamp(18px, 2.5vw, 28px);
   font-family: 'Great Vibes', cursive;
-
-  margin-top: -10px;
+  color: white;
+  margin-top: 10px;
 
   opacity: 0;
   animation: fadeIn 2s ease forwards;
   animation-delay: 2s;
-
-  text-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
-/* ANIMATIONS */
+/* ANIMATION */
 
 @keyframes draw {
   to {
@@ -186,13 +174,14 @@ body {
   margin: 40px auto;
 }
 
-.card {
-  margin: 30px 0;
-}
+/* MOBILE */
 
-.parallax {
-  height: 250px;
-  background-size: cover;
-  background-position: center;
-  margin: 30px 0;
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .hero-text {
+    top: 35%;
+  }
 }
