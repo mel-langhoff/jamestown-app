@@ -20,11 +20,11 @@
 <header class="site-header">
 
   <!-- LOGO --> 
-  <!-- <div class="header-logo">
+  <div class="header-logo">
     <a href="<?php echo home_url(); ?>">
-      <img src="https://jamestownco.org/wp-content/uploads/2026/03/ksldjflksdjl.png">
+      <img src="https://jamestownco.org/wp-content/uploads/2026/03/logo_1.png">
     </a>
-  </div> -->
+  </div>
 
 <!-- NAV -->
   <nav class="header-nav">

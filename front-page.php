@@ -15,19 +15,34 @@
     <div class="hero-subtitle">Incorporated in 1883</div>
   </div>
 
-
 </section>
+
+<!-- 👇 MOVE BUTTONS HERE -->
+<div class="hero-buttons">
+  <a href="#" class="circle-btn ordinances">Ordinances</a>
+  <a href="#" class="circle-btn permits">Permits</a>
+  <a href="#" class="circle-btn water">Pay Water<br>Bill</a>
+  <a href="#" class="circle-btn town">In Town</a>
+  <a href="#" class="circle-btn calendar">Calendar</a>
+  <a href="#" class="circle-btn contact">Contact</a>
+</div>
 
 <div style="padding:40px;">
 
-  
-    <div style="max-width:800px; margin:0 auto;">
-    <h2>📍 Town News</h2>
+  <div class="layout">
 
-    <!-- 🔥 THIS IS CRITICAL -->
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <h2>Town News</h2>
     <div id="app"></div>
-
   </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    kjkjlkjlkl
+  </aside>
+
+</div>
 
 </div>
 
