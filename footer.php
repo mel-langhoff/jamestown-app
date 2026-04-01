@@ -3,8 +3,8 @@
 
     <!-- LEFT: LOGO -->
     <div class="footer-col footer-logo">
-      <img src="/wp-content/uploads/2026/03/your-logo.png" alt="Jamestown Logo">
-      <div class="footer-town-name">JAMESTOWN</div>
+      <img src="https://jamestownco.org/wp-content/uploads/2026/03/logo_1.png" alt="Jamestown Logo">
+      <div class="footer-town-name"></div>
     </div>
 
     <!-- CONTACT -->
@@ -12,7 +12,6 @@
       <h3>CONTACT</h3>
       <p>(303) 449-1806</p>
       <p>PO Box 298<br>Jamestown, CO 80455</p>
-      <a href="#">Contact a Board</a>
     </div>
 
     <!-- TOWN HALL -->
@@ -24,9 +23,9 @@
 
     <!-- RIGHT LINKS -->
     <div class="footer-col footer-links">
-      <a href="#">Staff Login</a>
-      <a href="#">Accessibility Statement</a>
-      <a href="#">Government Websites by CivicPlus®</a>
+        <p><a href="https://jamestownco.org/board-of-trustees/">Town Board</p>
+        <p><a href="https://jamestownco.org/calendar/">Calendar</p>
+        <p><a href="mailto:townclerk@jamestownco.org">Email</p>
     </div>
 
   </div>

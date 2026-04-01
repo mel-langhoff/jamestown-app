@@ -63,3 +63,11 @@ add_action('rest_api_init', function () {
     }
   ));
 });
+
+
+function jamestown_register_menus() {
+  register_nav_menus(array(
+    'primary' => 'Main Menu'
+  ));
+}
+add_action('init', 'jamestown_register_menus');
