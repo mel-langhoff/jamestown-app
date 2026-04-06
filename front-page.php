@@ -16,13 +16,12 @@
 
         <div class="divider">
           <span></span>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/pickaxe.svg">
+          <img src="https://jamestownco.org/wp-content/uploads/2026/04/pd2.png">
           <span></span>
         </div>
 
         <p class="hero-description">
-          A historic mountain community rooted in Colorado’s mining heritage, 
-          preserving our past while building a strong future.
+          Blurb from Mary Ellen goes here
         </p>
 
         <div class="hero-buttons">
