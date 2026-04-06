@@ -2,35 +2,33 @@
 
 <section class="hero">
 
-  <img src="https://jamestownco.org/wp-content/uploads/2026/03/asdfghjkl.png" class="hero-img">
-
   <div class="hero-overlay">
 
-    <div class="hero-left">
+    <div class="hero-content">
 
       <div class="hero-frame">
 
         <div class="hero-small">WELCOME TO THE</div>
 
-        <!-- ✅ FIXED SVG BLOCK -->
-        <div class="hero-text">
-          <<div class="hero-text">
-  <svg viewBox="0 0 800 200" class="hero-svg">
-    <text x="0" y="120" class="draw-text">
-      Town of Jamestown
-    </text>
-  </svg>
-</div>
-        </div> <!-- ✅ THIS WAS MISSING -->
+        <h1 class="hero-title">Town of Jamestown</h1>
+
+        <div class="divider">
+          <span></span>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/pickaxe.svg">
+          <span></span>
+        </div>
 
         <p class="hero-description">
-          A historic mountain community committed to preserving our heritage 
-          while building a strong future for all.
+          A historic mountain community rooted in Colorado’s mining heritage, 
+          preserving our past while building a strong future.
         </p>
 
         <div class="hero-buttons">
-          <a href="#" class="btn primary">Town Services</a>
-          <a href="#" class="btn outline">News & Events</a>
+          <a href="#" class="btn primary">Pay Water Bill</a>
+          <a href="#" class="btn primary">In Town</a>
+          <a href="#" class="btn primary">Calendar</a>          
+
+          <!-- <a href="#" class="btn outline">News & Events</a> -->
         </div>
 
       </div>
@@ -41,31 +39,14 @@
 
 </section>
 
-<!-- SECOND BUTTON ROW (optional) -->
-<div class="hero-buttons secondary">
-  <a href="#" class="circle-btn ordinances">Ordinances</a>
-  <a href="#" class="circle-btn permits">Permits</a>
-  <a href="#" class="circle-btn water">Pay Water<br>Bill</a>
-  <a href="#" class="circle-btn town">In Town</a>
-  <a href="#" class="circle-btn calendar">Calendar</a>
-  <a href="#" class="circle-btn contact">Contact</a>
-</div>
 
-<div style="padding:40px;">
+<section class="news-row-section">
 
-  <div class="layout">
+  <h2 class="section-title">Town News</h2>
 
-    <div class="main-content">
-      <h2>Town News</h2>
-      <div id="app"></div>
-    </div>
+  <div class="news-row" id="app"></div>
 
-    <aside class="sidebar">
-      kjkjlkjlkl
-    </aside>
+</section>
 
-  </div>
-
-</div>
 
 <?php get_footer(); ?>

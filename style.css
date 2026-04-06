@@ -6,7 +6,7 @@ Theme Name: Jamestown Theme
 
 body {
   margin: 0;
-  font-family: 'Lora', serif;
+  font-family: 'Source Sans 3', sans-serif;
   background: #F5F1E8;
 }
 
@@ -396,6 +396,7 @@ footer {
 
   background: #f5f5f5;
   border-radius: 12px;
+  font-family: 'Source Sans 3', sans-serif;
 
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
@@ -417,12 +418,14 @@ footer {
   font-size: 20px;
   margin-bottom: 10px;
   color: #1f2d3d;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 /* text */
 .news-content p {
   font-size: 14px;
   color: #444;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 .news-img {
@@ -590,8 +593,8 @@ footer {
    SCRIPT LOGO (YOUR VIBE)
 ========================= */
 .script-logo {
-  font-family: 'Great Vibes', cursive;
-  font-size: 36px;
+  font-family: 'aRIAL';
+  font-size: 84px;
   color: #2e5239;
 }
 
@@ -713,7 +716,7 @@ footer {
 /* ===== SCRIPT LOGO ===== */
 .script-logo {
   font-family: 'Great Vibes', cursive;
-  font-size: 52px;
+  font-size: 36px;
   color: #2e5239;
 }
 
@@ -867,12 +870,14 @@ footer {
   list-style: none;
   margin: 0;
   padding: 14px 0;
+  font-family: 'Cinzel', serif;
 }
 
 .nav-menu a {
   text-decoration: none;
   color: #2e5239;
   font-weight: 500;
+  font-family: 'Cinzel', serif;
 }
 
 /* ===== DROPDOWN ===== */
@@ -914,7 +919,6 @@ footer {
 /* ===== BASE ===== */
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
   background: #f5f1e8;
 }
 
@@ -961,7 +965,7 @@ body {
 
 .script-logo {
   font-family: 'Great Vibes', cursive;
-  font-size: 56px;
+  font-size: 36px;
   color: #2e5239;
 }
 
@@ -1288,3 +1292,154 @@ body {
 
 
 
+/* ===== HERO ===== */
+
+.hero {
+  position: relative;
+  height: 90vh;
+  background: url('https://jamestownco.org/wp-content/uploads/2026/03/asdfghjkl.png') center/cover no-repeat;
+}
+
+/* DARK + GOLD OVERLAY */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(10, 25, 20, 0.75),
+    rgba(10, 25, 20, 0.65)
+  );
+  display: flex;
+  align-items: center;
+  padding-left: 8%;
+}
+
+/* CONTENT */
+.hero-content {
+  max-width: 600px;
+  color: #f5efe6;
+}
+
+/* FRAME (OLD WEST BORDER) */
+.hero-frame {
+  border: 2px solid rgba(201, 168, 97, 0.6);
+  padding: 40px;
+  position: relative;
+}
+
+/* CORNER DECOR */
+.hero-frame::before,
+.hero-frame::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #c9a861;
+}
+
+.hero-frame::before {
+  top: -10px;
+  left: -10px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.hero-frame::after {
+  bottom: -10px;
+  right: -10px;
+  border-left: none;
+  border-top: none;
+}
+
+/* SMALL TEXT */
+.hero-small {
+  letter-spacing: 3px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #c9a861;
+}
+
+/* TITLE */
+.hero-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 72px;
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* DIVIDER WITH PICKAXE */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c9a861);
+}
+
+.divider img {
+  width: 30px;
+  margin: 0 10px;
+  filter: sepia(1) saturate(4) hue-rotate(10deg);
+}
+
+/* DESCRIPTION */
+.hero-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #e6dcc9;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 22px;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border: 2px solid #c9a861;
+  transition: all 0.3s ease;
+}
+
+/* PRIMARY = GOLD PLATE */
+.btn.primary {
+  background: linear-gradient(145deg, #c9a861, #a8893d);
+  color: #1a1a1a;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+/* OUTLINE */
+.btn.outline {
+  color: #c9a861;
+}
+
+/* HOVER */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+.script-logo {
+  font-family: 'Playfair Display', serif !important;
+}
+
+
+#app {
+  display: flex !important;
+  gap: 20px;
+
+  overflow-x: auto;
+
+  padding: 20px 40px;
+
+  /* 👇 THIS is the magic */
+  width: fit-content;
+  margin: 0 auto;
+}
