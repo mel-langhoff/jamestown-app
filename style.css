@@ -6,7 +6,8 @@ Theme Name: Jamestown Theme
 
 body {
   margin: 0;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: 'Libre Baskerville', serif;
+  color: #2e5239;
   background: #F5F1E8;
 }
 
@@ -394,11 +395,14 @@ footer {
   width: 100%;
   padding: 15px;
 
-  background: #f5f5f5;
-  border-radius: 12px;
-  font-family: 'Source Sans 3', sans-serif;
+  background: #F5F1E8;
 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  font-family: 'Libre Baskerville', serif;
+  color: #2e5239;
+border: 2px solid #8b6f3d;       /* gold/brown border */
+
+  box-shadow: none;                /* optional: removes soft shadow */
+  
 }
 /* hover */
 .news-card:hover {
@@ -1442,4 +1446,31 @@ body {
   /* 👇 THIS is the magic */
   width: fit-content;
   margin: 0 auto;
+}
+
+
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+
+  color: #8b6f3d;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.news-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
 }

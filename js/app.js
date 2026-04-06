@@ -18,11 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      app.innerHTML = ""; // clear existing
+      app.innerHTML = "";
 
       posts.forEach(post => {
 
-        const card = document.createElement("div");
+        const card = document.createElement("a"); // 🔥 CHANGE: make it a link
+        card.href = post.link;
         card.className = "news-card";
 
         card.innerHTML = `
@@ -39,4 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
       app.innerHTML = "<p style='color:red;'>Error loading posts.</p>";
     });
 
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hero = document.getElementById("heroText");
+
+  if (hero) {
+    setTimeout(() => {
+      hero.classList.add("animate");
+    }, 200);
+  }
 });

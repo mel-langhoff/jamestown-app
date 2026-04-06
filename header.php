@@ -7,9 +7,10 @@
   <title><?php bloginfo('name'); ?></title>
 
   <!-- FONTS -->
+   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 
   <?php wp_head(); ?>

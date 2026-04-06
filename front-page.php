@@ -8,9 +8,11 @@
 
       <div class="hero-frame">
 
-        <div class="hero-small">WELCOME TO THE</div>
+        <div class="hero-small"></div>
 
-        <h1 class="hero-title">Town of Jamestown</h1>
+        <h1 class="hero-title hero-script" id="heroText">
+  Town of Jamestown
+</h1>
 
         <div class="divider">
           <span></span>
