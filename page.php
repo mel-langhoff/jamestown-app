@@ -5,9 +5,12 @@ Template Name: Custom Page
 get_header();
 ?>
 
+<!-- 🔥 FIXED IMAGE AT TOP -->
+<div class="page-hero"></div>
+
 <div class="layout">
 
-  <div class="main-content">
+  <div class="main-content page-content-box">
 
     <?php while (have_posts()) : the_post(); ?>
 
@@ -20,10 +23,6 @@ get_header();
     <?php endwhile; ?>
 
   </div>
-
-  <aside class="sidebar">
-    <img src="https://jamestownco.org/wp-content/uploads/2026/03/deer-scaled.jpg">
-  </aside>
 
 </div>
 

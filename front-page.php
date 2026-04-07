@@ -25,9 +25,9 @@
         </p>
 
         <div class="hero-buttons">
-          <a href="#" class="btn primary">Pay Water Bill</a>
-          <a href="#" class="btn primary">In Town</a>
-          <a href="#" class="btn primary">Calendar</a>          
+          <a href="https://jamestownco.org/2021/10/01/new-pay-your-water-bill-online/" class="btn primary">Pay Water Bill</a>
+          <a href="https://jamestownco.org/town-board/" class="btn primary">Town Board</a>
+          <a href="https://jamestownco.org/calendar/" class="btn primary">Calendar</a>          
 
           <!-- <a href="#" class="btn outline">News & Events</a> -->
         </div>
