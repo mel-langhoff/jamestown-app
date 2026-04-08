@@ -16,7 +16,7 @@ add_action('wp_enqueue_scripts', 'jamestown_scripts');
 
 
 // =========================
-// REGISTER MENU
+// REGISTER MENU (ONLY ONCE)
 // =========================
 function jamestown_menus() {
     register_nav_menus(array(
@@ -27,7 +27,7 @@ add_action('after_setup_theme', 'jamestown_menus');
 
 
 // =========================
-// API ROUTE (FIXED VERSION)
+// API ROUTE - POSTS
 // =========================
 add_action('rest_api_init', function () {
     register_rest_route('jamestown/v1', '/posts', array(
@@ -40,34 +40,39 @@ add_action('rest_api_init', function () {
                 return [];
             }
 
-            $body = wp_remote_retrieve_body($response);
+            return json_decode(wp_remote_retrieve_body($response), true);
+        }
+    ));
+});
 
-            // 👇 THIS IS IMPORTANT (fixes weird JSON issues)
-            return json_decode($body, true);
+
+// =========================
+// API ROUTE - PAGES
+// =========================
+add_action('rest_api_init', function () {
+    register_rest_route('jamestown/v1', '/pages', array(
+        'methods'  => 'GET',
+        'callback' => function () {
+
+            $response = wp_remote_get('https://jamestownco.org/wp-json/wp/v2/pages');
+
+            if (is_wp_error($response)) {
+                return [];
+            }
+
+            return json_decode(wp_remote_retrieve_body($response), true);
         }
     ));
 });
 
 add_action('rest_api_init', function () {
-  register_rest_route('jamestown/v1', '/pages', array(
-    'methods'  => 'GET',
+  register_rest_route('jamestown/v1', '/menu', array(
+    'methods' => 'GET',
     'callback' => function () {
 
-      $response = wp_remote_get('https://jamestownco.org/wp-json/wp/v2/pages');
+      $items = wp_get_nav_menu_items('primary');
 
-      if (is_wp_error($response)) {
-        return [];
-      }
-
-      return json_decode(wp_remote_retrieve_body($response), true);
+      return $items;
     }
   ));
 });
-
-
-function jamestown_register_menus() {
-  register_nav_menus(array(
-    'primary' => 'Main Menu'
-  ));
-}
-add_action('init', 'jamestown_register_menus');
