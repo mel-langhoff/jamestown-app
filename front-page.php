@@ -21,7 +21,6 @@
         </div>
 
         <p class="hero-description">
-          Blurb from Mary Ellen goes here
         </p>
 
         <div class="hero-buttons">
@@ -44,6 +43,8 @@
 <section class="news-row-section">
 
   <h2 class="section-title">Town News</h2>
+
+<div class="full-bar"></div>
 
   <div class="news-row" id="app"></div>
 

@@ -393,17 +393,24 @@ footer {
 /* CARD */
 .news-card {
   width: 100%;
-  padding: 15px;
+  padding: 20px;
 
   background: #F5F1E8;
 
   font-family: 'Libre Baskerville', serif;
   color: #2e5239;
-border: 2px solid #8b6f3d;       /* gold/brown border */
 
-  box-shadow: none;                /* optional: removes soft shadow */
-  
+  border: 2px solid #8b6f3d;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   /* 🔥 centers horizontally */
+  text-align: center;    /* 🔥 centers text */
+
+  min-height: 220px;     /* keeps boxes even height */
 }
+
 /* hover */
 .news-card:hover {
   transform: translateY(-5px);
@@ -1511,3 +1518,115 @@ body {
     margin-top: 0;
   }
 }
+
+.news-content h3 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.news-card {
+  border: 2px solid #8b6f3d;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.news-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.news-card:hover {
+  transform: translateY(-6px);
+  transition: 0.25s ease;
+}
+
+.news-content {
+  text-align: left;              /* 🔥 stop centering paragraphs */
+  line-height: 1.6;
+}
+
+/* paragraphs */
+.news-content p {
+  margin-bottom: 12px;
+}
+
+/* links */
+.news-content a {
+  color: #8b6f3d;
+  text-decoration: underline;
+}
+
+/* headings inside posts */
+.news-content h1,
+.news-content h2,
+.news-content h3 {
+  margin-bottom: 10px;
+}
+
+/* lists */
+.news-content ul {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.news-card {
+  text-align: center;   /* keeps title centered */
+}
+
+.news-content {
+  text-align: left;     /* body back to normal */
+}
+
+.news-card {
+  text-align: center;   /* keeps title centered */
+}
+
+.news-content {
+  text-align: left;     /* body back to normal */
+}
+
+/* 🔥 FORCE REMOVE BULLETS */
+.nav-menu,
+.nav-menu ul,
+.nav-menu li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.nav-menu a {
+  line-height: 1.8;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: bold;
+  color: #8b6f3d;
+  font-size: 14px;
+}
+.
+.full-bar {
+  width: 100vw;
+  height: 20px;
+  background: #2e5239;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.full-bar {
+  display: block;
+  width: 100vw;
+  height: 40px;
+  background: #2e5239;
+
+  margin: 20px 0;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+

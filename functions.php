@@ -76,3 +76,15 @@ add_action('rest_api_init', function () {
     }
   ));
 });
+
+add_action('rest_api_init', function () {
+  register_rest_route('jamestown/v1', '/menu', array(
+    'methods' => 'GET',
+    'callback' => function () {
+
+      $items = wp_get_nav_menu_items('primary');
+
+      return $items;
+    }
+  ));
+});
