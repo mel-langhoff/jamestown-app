@@ -1381,21 +1381,31 @@ body {
 .divider {
   display: flex;
   align-items: center;
+  justify-content: center;  /* 🔥 forces center */
+
+  width: 100%;
   margin: 20px 0;
 }
 
 .divider span {
   flex: 1;
   height: 1px;
+
   background: linear-gradient(to right, transparent, #c9a861);
+}
+
+.divider span:last-child {
+  background: linear-gradient(to left, transparent, #c9a861);
 }
 
 .divider img {
   width: 30px;
-  margin: 0 10px;
-  filter: sepia(1) saturate(4) hue-rotate(10deg);
-}
+  margin: 0 12px;
 
+  display: block;           /* 🔥 removes inline weirdness */
+  position: relative;
+  top: 1px;                 /* 👈 micro-adjust if needed */
+}
 /* DESCRIPTION */
 .hero-description {
   font-size: 16px;
