@@ -11,7 +11,7 @@
         <div class="hero-small"></div>
 
         <h1 class="hero-title hero-script" id="heroText">
-  Town of Jamestown
+  Town of<br>Jamestown
 </h1>
 
         <div class="divider">

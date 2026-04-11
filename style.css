@@ -1962,3 +1962,108 @@ html, body {
   }
 
 }
+
+/* =========================
+   🔥 HERO TEXT MOBILE FIX
+========================= */
+
+/* make it scale properly */
+.hero-title {
+  font-size: clamp(36px, 12vw, 72px);
+  line-height: 1.1;
+  word-break: break-word;
+}
+
+/* force nice stacking on mobile */
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: clamp(32px, 10vw, 48px);
+    text-align: center;
+  }
+
+}
+
+
+/* =========================
+   HERO TITLE (RESPONSIVE)
+========================= */
+
+.hero-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(36px, 10vw, 120px); /* 👈 magic line */
+  line-height: 1.05;
+  margin: 0;
+  text-align: center;
+}
+
+/* =========================
+   HERO TITLE
+========================= */
+
+/* DESKTOP */
+.hero-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(60px, 6vw, 120px);
+  line-height: 1.05;
+  margin: 0;
+  text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+
+}
+
+/* =========================
+   HERO TITLE
+========================= */
+
+/* DESKTOP */
+.hero-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 120px;
+  line-height: 1.05;
+  margin: 0;
+  text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: 45px !important; /* 👈 force it small */
+  }
+
+}
+
+/* =========================
+   🔥 SMALLER BUTTONS (MOBILE)
+========================= */
+
+@media (max-width: 768px) {
+
+  .hero-buttons .btn {
+    padding: 8px 14px !important;   /* 👈 smaller */
+    font-size: 12px !important;     /* 👈 smaller text */
+    max-width: 200px;               /* 👈 prevents stretching */
+    width: auto;                    /* 👈 don't fill full width */
+  }
+
+}
+
+/* =========================
+   🔥 REMOVE HEADER PADDING (MOBILE)
+========================= */
+
+@media (max-width: 768px) {
+
+  .header-main {
+    padding: 0 !important;
+  }
+
+}
