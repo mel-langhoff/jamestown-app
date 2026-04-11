@@ -2215,3 +2215,49 @@ html, body {
   position: absolute;
   right: 0;
 }
+
+/* =========================
+   🔥 FINAL CARD LAYOUT FIX
+   (OVERRIDES CHAOS ABOVE)
+========================= */
+
+/* 📱 MOBILE = SCROLL */
+@media (max-width: 768px) {
+
+  #app {
+    display: flex !important;
+    overflow-x: auto !important;
+    gap: 20px;
+    padding: 20px;
+
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .news-card {
+    min-width: 260px;
+    flex: 0 0 auto;
+  }
+
+}
+
+
+/* 💻 DESKTOP = GRID */
+@media (min-width: 769px) {
+
+  #app {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+
+    gap: 25px;
+    width: 90% !important;
+    margin: 40px auto !important;
+
+    overflow: visible !important;
+  }
+
+  .news-card {
+    min-width: unset !important;
+  }
+
+}
