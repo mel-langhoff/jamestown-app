@@ -1377,6 +1377,10 @@ body {
   line-height: 1.1;
 }
 
+.hero-title {
+  font-size: clamp(32px, 6vw, 80px);
+}
+
 /* DIVIDER WITH PICKAXE */
 .divider {
   display: flex;
@@ -1640,3 +1644,321 @@ body {
   transform: translateX(-50%);
 }
 
+.page-content p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.page-content a {
+  color: #8b6f3d;
+}
+
+/* HIDE BUTTON DESKTOP */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    margin: 10px 20px;
+  }
+
+  .nav-wrapper {
+    display: none;
+  }
+
+  .nav-wrapper.active {
+    display: block;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .nav-menu li ul {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.nav-menu li > a::after {
+  content: " ▾";
+  font-size: 12px;
+}
+
+/* ===== GLOBAL CONTAINER ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== HEADER LAYOUT ===== */
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* keep things from squishing */
+.header-title {
+  text-align: center;
+  flex: 1;
+}
+
+/* logo + search stay sized */
+.logo-circle,
+.header-search {
+  flex-shrink: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+
+  /* ===== HEADER ===== */
+  .header-main {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .header-search {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* ===== NAV ===== */
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    height: auto;
+    min-height: 60vh;
+  }
+
+  .hero-content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* TEXT scales automatically if you're using clamp() */
+
+  /* ===== BUTTONS STACK ===== */
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* ===== CARDS ===== */
+  #app {
+    grid-template-columns: 1fr;  /* 🔥 single column */
+  }
+
+}
+
+/* =========================
+   🔥 HERO CUT-OFF FIX
+========================= */
+
+.hero {
+  height: auto !important;
+  min-height: 70vh;
+  overflow: visible !important;
+}
+
+.hero-overlay {
+  position: relative !important;
+  padding: 40px 20px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .page-content-box {
+    margin-top: 0 !important;
+  }
+}
+
+.hero-frame {
+  padding: 20px;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+/* =========================
+   🔥 MOBILE HEADER CENTER FIX
+========================= */
+@media (max-width: 768px) {
+
+  .header-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .logo-circle {
+    margin: 0 auto;
+  }
+
+  .header-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .script-logo {
+    text-align: center;
+  }
+
+  .sub-logo {
+    text-align: center;
+  }
+
+  .header-search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-form {
+    width: 100%;
+    max-width: 300px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-form input {
+    width: 100%;
+  }
+
+  .search-form button {
+    width: 100%;
+    border-radius: 20px; /* looks better stacked */
+  }
+
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+/* =========================
+   🔥 LOGO + TITLE ROW (O Jamestown)
+========================= */
+
+.header-main {
+  display: flex;
+  align-items: center;     /* vertical alignment */
+  justify-content: center; /* center whole group */
+  gap: 20px;               /* space between circle + text */
+  text-align: left;
+}
+
+/* circle */
+.logo-circle {
+  flex-shrink: 0;
+}
+
+/* text block */
+.header-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =========================
+   🔥 HEADER FINAL (O Jamestown LEFT)
+========================= */
+
+/* DESKTOP */
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 👈 LEFT ALIGN */
+  gap: 20px;
+  padding: 20px 40px;
+}
+
+/* circle */
+.logo-circle {
+  flex-shrink: 0;
+}
+
+/* text block */
+.header-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+/* tighten spacing */
+.script-logo {
+  margin: 0;
+  line-height: 1;
+}
+
+.sub-logo {
+  margin-top: 4px;
+}
+
+
+/* =========================
+   📱 MOBILE (STACK + CENTER)
+========================= */
+
+@media (max-width: 768px) {
+
+  .header-main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .header-title {
+    align-items: center;
+    text-align: center;
+  }
+
+}
