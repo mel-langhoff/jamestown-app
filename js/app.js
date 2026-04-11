@@ -125,5 +125,38 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
 
+  // ===== HAMBURGER =====
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav-wrapper");
 
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  }
+
+  // ===== SUBMENUS (mobile only) =====
+  const items = document.querySelectorAll(".nav-menu > li");
+
+  items.forEach(item => {
+    const submenu = item.querySelector("ul");
+
+    if (submenu) {
+      item.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+
+          // close others (optional but nice)
+          items.forEach(i => {
+            if (i !== item) i.classList.remove("active");
+          });
+
+          item.classList.toggle("active");
+        }
+      });
+    }
+  });
+
+});

@@ -2261,3 +2261,48 @@ html, body {
   }
 
 }
+
+@media (max-width: 768px) {
+
+  /* hide nav by default */
+  .nav-wrapper {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-wrapper.active {
+    display: block;
+  }
+
+  /* stack menu */
+  .nav-menu {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 20px;
+  }
+
+  /* each main item */
+  .nav-menu > li {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+  }
+
+  /* 🔥 SUBMENUS */
+  .nav-menu li ul {
+    display: none;
+    position: static;
+    padding-left: 15px;
+    margin-top: 8px;
+  }
+
+  /* when clicked */
+  .nav-menu li.active > ul {
+    display: block;
+  }
+
+  /* disable hover behavior on mobile */
+  .nav-menu li:hover > ul {
+    display: none;
+  }
+
+}
