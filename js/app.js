@@ -1,38 +1,34 @@
-console.log("JS WORKING 🔥");
+console.log("JS LOADED 🔥");
 
 // =========================
 // ✂️ GET FIRST TWO SENTENCES
 // =========================
 function getFirstTwoSentences(html) {
   const text = html.replace(/<[^>]+>/g, "").trim();
-
-  // match sentences
   const matches = text.match(/[^.!?]+[.!?]+/g);
 
-  let result = "";
-
   if (matches && matches.length >= 2) {
-    result = matches[0] + " " + matches[1];
+    return `
+      <p>${matches[0]} ${matches[1]}</p>
+      <span class="read-more">Read more →</span>
+    `;
   } else if (matches && matches.length === 1) {
-    result = matches[0];
+    return `<p>${matches[0]}</p>`;
   } else {
-    result = text;
+    return `<p>${text}</p>`;
   }
-
-  return `
-    <p>${result}</p>
-    <span class="read-more">Read more →</span>
-  `;
 }
 
 
 // =========================
-// 🚀 MAIN LOAD
+// 🚀 MAIN APP
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
 
+  console.log("DOM READY ✅");
+
   // =========================
-  // 📰 POSTS
+  // 📰 LOAD POSTS
   // =========================
   const app = document.getElementById("app");
 
@@ -62,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
           `;
 
           app.appendChild(card);
+
         });
 
       })
@@ -83,51 +80,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 200);
   }
 
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("app");
-  const arrow = document.getElementById("scrollArrow");
-
-  if (container && arrow) {
-    arrow.addEventListener("click", () => {
-      container.scrollBy({
-        left: 300,
-        behavior: "smooth"
-      });
-    });
-  }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("app");
-  const left = document.getElementById("scrollLeft");
-  const right = document.getElementById("scrollRight");
-
-  if (container && left && right) {
-
-    const scrollAmount = 300;
-
-    right.addEventListener("click", () => {
-      container.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth"
-      });
-    });
-
-    left.addEventListener("click", () => {
-      container.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth"
-      });
-    });
-
-  }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  // ===== HAMBURGER =====
+  // =========================
+  // 🍔 HAMBURGER MENU
+  // =========================
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav-wrapper");
 
@@ -137,26 +93,87 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===== SUBMENUS (mobile only) =====
-  const items = document.querySelectorAll(".nav-menu > li");
 
-  items.forEach(item => {
-    const submenu = item.querySelector("ul");
+// =========================
+// 📱 MOBILE SUBMENU FIX
+// =========================
+if (window.innerWidth <= 768) {
+
+  const links = document.querySelectorAll(".nav-menu > li > a");
+
+  links.forEach(link => {
+    const parent = link.parentElement;
+    const submenu = parent.querySelector("ul");
 
     if (submenu) {
-      item.addEventListener("click", (e) => {
-        if (window.innerWidth <= 768) {
+      link.addEventListener("click", (e) => {
+
+        // if not already open → open it
+        if (!parent.classList.contains("open")) {
           e.preventDefault();
-
-          // close others (optional but nice)
-          items.forEach(i => {
-            if (i !== item) i.classList.remove("active");
-          });
-
-          item.classList.toggle("active");
+          parent.classList.add("open");
         }
+
+        // if already open → allow navigation (do nothing)
       });
     }
   });
+
+}
+
+// =========================
+// 📱 MOBILE SUBMENU (OPTION B)
+// =========================
+if (window.innerWidth <= 768) {
+
+  const links = document.querySelectorAll(".nav-menu > li > a");
+
+  links.forEach(link => {
+    const parent = link.parentElement;
+    const submenu = parent.querySelector("ul");
+
+    if (submenu) {
+      link.addEventListener("click", (e) => {
+
+        // if NOT open → open it
+        if (!parent.classList.contains("open")) {
+          e.preventDefault();
+
+          // close others (accordion feel)
+          document.querySelectorAll(".nav-menu > li").forEach(li => {
+            li.classList.remove("open");
+          });
+
+          parent.classList.add("open");
+        }
+
+        // if already open → allow navigation
+      });
+    }
+  });
+
+}
+
+
+
+  
+  // =========================
+  // 👉 SCROLL ARROWS
+  // =========================
+  const left = document.getElementById("scrollLeft");
+  const right = document.getElementById("scrollRight");
+
+  if (app && left && right) {
+    const card = app.querySelector(".news-card");
+    const scrollAmount = card ? card.offsetWidth + 20 : 300;
+
+    right.addEventListener("click", () => {
+      app.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+
+    left.addEventListener("click", () => {
+      app.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    });
+  }
 
 });
