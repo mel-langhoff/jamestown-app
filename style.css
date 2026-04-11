@@ -2272,7 +2272,11 @@ html, body {
 
 /* 🔥 FINAL NAV FIX - NO HOVER EVER */
 
-
+@media (max-width: 768px) {
+  .nav-menu li ul {
+    display: none;
+    position: static;
+  }
 
   .nav-menu li.open > ul {
     display: block;
@@ -2325,29 +2329,7 @@ html, body {
 
 }
 
-@media (max-width: 768px) {
-
-  .nav-wrapper {
-    display: none;
-  }
-
-  .nav-wrapper.active {
-    display: block;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    padding: 10px 20px;
-  }
-
-  .nav-menu li ul {
-    display: none;
-    position: static;
-    padding-left: 15px;
-  }
-
-  .nav-menu li.open > ul {
-    display: block;
-  }
-
+/* 🔥 REMOVE DROPDOWN ARROWS */
+.nav-menu li > a::after {
+  content: none !important;
 }
