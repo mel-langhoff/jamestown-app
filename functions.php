@@ -1,33 +1,20 @@
 <?php
 
-// =========================
-// LOAD JS
-// =========================
-function jamestown_scripts() {
-    wp_enqueue_script(
-        'jamestown-js',
-        get_template_directory_uri() . '/js/app.js',
-        array(),
-        time(),
-        true
-    );
-}
-add_action('wp_enqueue_scripts', 'jamestown_scripts');
 
 
 // =========================
-// REGISTER MENU (ONLY ONCE)
+// 🔥 REGISTER MENU
 // =========================
-function jamestown_menus() {
+function jamestown_setup() {
     register_nav_menus(array(
-        'primary' => 'Primary Menu',
+        'primary' => 'Primary Menu'
     ));
 }
-add_action('after_setup_theme', 'jamestown_menus');
+add_action('after_setup_theme', 'jamestown_setup');
 
 
 // =========================
-// API ROUTE - POSTS
+// 🔥 API ROUTE - POSTS
 // =========================
 add_action('rest_api_init', function () {
     register_rest_route('jamestown/v1', '/posts', array(
@@ -47,7 +34,7 @@ add_action('rest_api_init', function () {
 
 
 // =========================
-// API ROUTE - PAGES
+// 🔥 API ROUTE - PAGES
 // =========================
 add_action('rest_api_init', function () {
     register_rest_route('jamestown/v1', '/pages', array(
@@ -65,26 +52,16 @@ add_action('rest_api_init', function () {
     ));
 });
 
+
+// =========================
+// 🔥 API ROUTE - MENU
+// =========================
 add_action('rest_api_init', function () {
-  register_rest_route('jamestown/v1', '/menu', array(
-    'methods' => 'GET',
-    'callback' => function () {
+    register_rest_route('jamestown/v1', '/menu', array(
+        'methods'  => 'GET',
+        'callback' => function () {
 
-      $items = wp_get_nav_menu_items('primary');
-
-      return $items;
-    }
-  ));
-});
-
-add_action('rest_api_init', function () {
-  register_rest_route('jamestown/v1', '/menu', array(
-    'methods' => 'GET',
-    'callback' => function () {
-
-      $items = wp_get_nav_menu_items('primary');
-
-      return $items;
-    }
-  ));
+            return wp_get_nav_menu_items('primary');
+        }
+    ));
 });

@@ -1,18 +1,14 @@
 <?php get_header(); ?>
 
 <section class="hero">
-
   <div class="hero-overlay">
-
     <div class="hero-content">
 
       <div class="hero-frame">
 
-        <div class="hero-small"></div>
-
         <h1 class="hero-title hero-script" id="heroText">
-  Town of<br>Jamestown
-</h1>
+          Town of<br>Jamestown
+        </h1>
 
         <div class="divider">
           <span></span>
@@ -20,35 +16,27 @@
           <span></span>
         </div>
 
-        <p class="hero-description">
-        </p>
-
         <div class="hero-buttons">
-          <a href="https://jamestownco.org/2021/10/01/new-pay-your-water-bill-online/" class="btn primary">Pay Water Bill</a>
-          <a href="https://jamestownco.org/town-board/" class="btn primary">Town Board</a>
-          <a href="https://jamestownco.org/calendar/" class="btn primary">Calendar</a>          
-
-          <!-- <a href="#" class="btn outline">News & Events</a> -->
+          <a href="#" class="btn primary">Pay Water Bill</a>
+          <a href="#" class="btn primary">Town Board</a>
+          <a href="#" class="btn primary">Calendar</a>
         </div>
 
       </div>
 
     </div>
-
   </div>
-
 </section>
-
 
 <section class="news-row-section">
 
   <h2 class="section-title">Town News</h2>
-
-<div class="full-bar"></div>
+  <div class="full-bar"></div>
 
   <div class="news-row" id="app"></div>
 
-</section>
+  <div class="scroll-arrow" id="scrollArrow">→</div>
 
+</section>
 
 <?php get_footer(); ?>

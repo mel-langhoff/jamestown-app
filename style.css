@@ -2067,3 +2067,119 @@ html, body {
   }
 
 }
+
+/* =========================
+   🔥 FORCE GRID (FINAL FIX)
+========================= */
+
+#app {
+  display: grid !important; /* 👈 overrides flex */
+  gap: 20px;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  width: 90%;
+  margin: 40px auto;
+}
+
+/* =========================
+   🔥 HORIZONTAL SCROLL ROW
+========================= */
+
+#app {
+  display: flex;
+  gap: 20px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  padding: 20px;
+}
+
+/* each card */
+.news-card {
+  min-width: 280px;   /* 👈 controls how many fit */
+  flex: 0 0 auto;
+
+  scroll-snap-align: start;
+}
+
+/* =========================
+   🔥 SCROLL CARDS
+========================= */
+
+#app {
+  display: flex !important;
+  gap: 20px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  padding: 20px;
+}
+
+/* each card */
+.news-card {
+  min-width: 280px;
+  flex: 0 0 auto;
+
+  scroll-snap-align: start;
+}
+
+/* hide scrollbar */
+#app::-webkit-scrollbar {
+  display: none;
+}
+
+#app {
+  scrollbar-width: none;
+}
+
+/* arrow */
+.scroll-arrow {
+  text-align: right;
+  padding: 0 20px;
+  font-size: 24px;
+  color: #8b6f3d;
+  cursor: pointer;
+}
+
+/* =========================
+   🔥 SCROLL CARDS
+========================= */
+
+#app {
+  display: flex !important;
+  gap: 20px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  padding: 20px;
+}
+
+/* each card */
+.news-card {
+  min-width: 280px;
+  flex: 0 0 auto;
+
+  scroll-snap-align: start;
+}
+
+/* hide scrollbar */
+#app::-webkit-scrollbar {
+  display: none;
+}
+
+#app {
+  scrollbar-width: none;
+}
+
+/* arrow */
+.scroll-arrow {
+  text-align: right;
+  padding: 0 20px;
+  font-size: 24px;
+  color: #8b6f3d;
+  cursor: pointer;
+}

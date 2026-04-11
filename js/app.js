@@ -86,12 +86,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".nav-wrapper");
+  const container = document.getElementById("app");
+  const arrow = document.getElementById("scrollArrow");
 
-  if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("active");
+  if (container && arrow) {
+    arrow.addEventListener("click", () => {
+      container.scrollBy({
+        left: 300,
+        behavior: "smooth"
+      });
     });
   }
 });
+
