@@ -35,7 +35,10 @@
 
   <div class="news-row" id="app"></div>
 
-  <div class="scroll-arrow" id="scrollArrow">→</div>
+  <div class="scroll-controls">
+  <div class="scroll-arrow left" id="scrollLeft">←</div>
+  <div class="scroll-arrow right" id="scrollRight">→</div>
+</div>
 
 </section>
 

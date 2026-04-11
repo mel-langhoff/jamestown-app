@@ -99,3 +99,29 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("app");
+  const left = document.getElementById("scrollLeft");
+  const right = document.getElementById("scrollRight");
+
+  if (container && left && right) {
+
+    const scrollAmount = 300;
+
+    right.addEventListener("click", () => {
+      container.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth"
+      });
+    });
+
+    left.addEventListener("click", () => {
+      container.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth"
+      });
+    });
+
+  }
+});
+

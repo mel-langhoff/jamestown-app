@@ -2183,3 +2183,35 @@ html, body {
   color: #8b6f3d;
   cursor: pointer;
 }
+
+/* container for arrows */
+.scroll-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 900px;
+  margin: 10px auto;
+}
+
+/* arrows */
+.scroll-arrow {
+  font-size: 24px;
+  color: #8b6f3d;
+  cursor: pointer;
+  user-select: none;
+}
+
+.scroll-controls {
+  position: relative;
+}
+
+.scroll-arrow.left {
+  position: absolute;
+  left: 0;
+}
+
+.scroll-arrow.right {
+  position: absolute;
+  right: 0;
+}
