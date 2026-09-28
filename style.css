@@ -112,9 +112,7 @@ body {
   border: 1px solid black;
 }
 
-.header-nav li:hover > ul {
-  display: block;
-}
+
 
 .header-nav ul ul a {
   font-family: 'Source Sans 3', sans-serif;
@@ -666,28 +664,7 @@ footer {
   position: relative;
 }
 
-.nav-menu li ul {
-  position: absolute;
-  top: 100%;
-  left: 0;
 
-  background: white;
-  min-width: 220px;
-
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-
-  transition: all 0.25s ease;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.nav-menu li:hover > ul {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
 
 .nav-menu li ul li {
   padding: 10px 20px;
@@ -782,28 +759,7 @@ footer {
   position: relative;
 }
 
-.nav-menu li ul {
-  position: absolute;
-  top: 100%;
-  left: 0;
 
-  background: white;
-  min-width: 220px;
-
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-
-  transition: all 0.25s ease;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.nav-menu li:hover > ul {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
 
 .nav-menu li ul li {
   padding: 10px 20px;
@@ -896,28 +852,7 @@ footer {
   position: relative;
 }
 
-.nav-menu li ul {
-  position: absolute;
-  top: 100%;
-  left: 0;
 
-  background: white;
-  min-width: 220px;
-
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-
-  transition: all 0.25s ease;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.nav-menu li:hover > ul {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
 
 .nav-menu li ul li {
   padding: 10px 20px;
@@ -1030,28 +965,9 @@ body {
   position: relative;
 }
 
-.nav-menu li ul {
-  position: absolute;
-  top: 100%;
-  left: 0;
 
-  background: white;
-  min-width: 220px;
 
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
 
-  transition: 0.25s ease;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.nav-menu li:hover > ul {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
 
 .hero {
   position: relative;
@@ -1377,25 +1293,39 @@ body {
   line-height: 1.1;
 }
 
+.hero-title {
+  font-size: clamp(32px, 6vw, 80px);
+}
+
 /* DIVIDER WITH PICKAXE */
 .divider {
   display: flex;
   align-items: center;
+  justify-content: center;  /* 🔥 forces center */
+
+  width: 100%;
   margin: 20px 0;
 }
 
 .divider span {
   flex: 1;
   height: 1px;
+
   background: linear-gradient(to right, transparent, #c9a861);
+}
+
+.divider span:last-child {
+  background: linear-gradient(to left, transparent, #c9a861);
 }
 
 .divider img {
   width: 30px;
-  margin: 0 10px;
-  filter: sepia(1) saturate(4) hue-rotate(10deg);
-}
+  margin: 0 12px;
 
+  display: block;           /* 🔥 removes inline weirdness */
+  position: relative;
+  top: 1px;                 /* 👈 micro-adjust if needed */
+}
 /* DESCRIPTION */
 .hero-description {
   font-size: 16px;
@@ -1606,7 +1536,7 @@ body {
   color: #8b6f3d;
   font-size: 14px;
 }
-.
+
 .full-bar {
   width: 100vw;
   height: 20px;
@@ -1630,3 +1560,895 @@ body {
   transform: translateX(-50%);
 }
 
+.page-content p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.page-content a {
+  color: #8b6f3d;
+}
+
+/* HIDE BUTTON DESKTOP */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    margin: 10px 20px;
+  }
+
+  .nav-wrapper {
+    display: none;
+  }
+
+  .nav-wrapper.active {
+    display: block;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .nav-menu li ul {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.nav-menu li > a::after {
+  content: " ▾";
+  font-size: 12px;
+}
+
+/* ===== GLOBAL CONTAINER ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== HEADER LAYOUT ===== */
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* keep things from squishing */
+.header-title {
+  text-align: center;
+  flex: 1;
+}
+
+/* logo + search stay sized */
+.logo-circle,
+.header-search {
+  flex-shrink: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+
+  /* ===== HEADER ===== */
+  .header-main {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .header-search {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* ===== NAV ===== */
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    height: auto;
+    min-height: 60vh;
+  }
+
+  .hero-content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* TEXT scales automatically if you're using clamp() */
+
+  /* ===== BUTTONS STACK ===== */
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* ===== CARDS ===== */
+  #app {
+    grid-template-columns: 1fr;  /* 🔥 single column */
+  }
+
+}
+
+/* =========================
+   🔥 HERO CUT-OFF FIX
+========================= */
+
+.hero {
+  height: auto !important;
+  min-height: 70vh;
+  overflow: visible !important;
+}
+
+.hero-overlay {
+  position: relative !important;
+  padding: 40px 20px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .page-content-box {
+    margin-top: 0 !important;
+  }
+}
+
+.hero-frame {
+  padding: 20px;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+/* =========================
+   🔥 MOBILE HEADER CENTER FIX
+========================= */
+@media (max-width: 768px) {
+
+  .header-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .logo-circle {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .header-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .script-logo {
+    text-align: center;
+  }
+
+  .sub-logo {
+    text-align: center;
+  }
+
+  .header-search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-form {
+    width: 100%;
+    max-width: 300px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-form input {
+    width: 100%;
+  }
+
+  .search-form button {
+    width: 100%;
+    border-radius: 20px; /* looks better stacked */
+  }
+
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+/* =========================
+   🔥 LOGO + TITLE ROW (O Jamestown)
+========================= */
+
+.header-main {
+  display: flex;
+  align-items: center;     /* vertical alignment */
+  justify-content: center; /* center whole group */
+  gap: 20px;               /* space between circle + text */
+  text-align: left;
+}
+
+/* circle */
+.logo-circle {
+  flex-shrink: 0;
+}
+
+/* text block */
+.header-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =========================
+   🔥 HEADER FINAL (O Jamestown LEFT)
+========================= */
+
+/* DESKTOP */
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 👈 LEFT ALIGN */
+  gap: 20px;
+  padding: 20px 40px;
+}
+
+/* circle */
+.logo-circle {
+  flex-shrink: 0;
+}
+
+/* text block */
+.header-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+/* tighten spacing */
+.script-logo {
+  margin: 0;
+  line-height: 1;
+}
+
+.sub-logo {
+  margin-top: 4px;
+}
+
+
+/* =========================
+   📱 MOBILE (STACK + CENTER)
+========================= */
+
+@media (max-width: 768px) {
+
+  .header-main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .header-title {
+    align-items: center;
+    text-align: center;
+  }
+
+}
+
+/* =========================
+   🔥 HERO TEXT MOBILE FIX
+========================= */
+
+/* make it scale properly */
+.hero-title {
+  font-size: clamp(36px, 12vw, 72px);
+  line-height: 1.1;
+  word-break: break-word;
+}
+
+/* force nice stacking on mobile */
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: clamp(32px, 10vw, 48px);
+    text-align: center;
+  }
+
+}
+
+
+/* =========================
+   HERO TITLE (RESPONSIVE)
+========================= */
+
+.hero-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(36px, 10vw, 120px); /* 👈 magic line */
+  line-height: 1.05;
+  margin: 0;
+  text-align: center;
+}
+
+/* =========================
+   HERO TITLE
+========================= */
+
+/* DESKTOP */
+.hero-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(60px, 6vw, 120px);
+  line-height: 1.05;
+  margin: 0;
+  text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+
+}
+
+/* =========================
+   HERO TITLE
+========================= */
+
+/* DESKTOP */
+.hero-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 120px;
+  line-height: 1.05;
+  margin: 0;
+  text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: 45px !important; /* 👈 force it small */
+  }
+
+}
+
+/* =========================
+   🔥 SMALLER BUTTONS (MOBILE)
+========================= */
+
+@media (max-width: 768px) {
+
+  .hero-buttons .btn {
+    padding: 8px 14px !important;   /* 👈 smaller */
+    font-size: 12px !important;     /* 👈 smaller text */
+    max-width: 200px;               /* 👈 prevents stretching */
+    width: auto;                    /* 👈 don't fill full width */
+  }
+
+}
+
+/* =========================
+   🔥 REMOVE HEADER PADDING (MOBILE)
+========================= */
+
+@media (max-width: 768px) {
+
+  .header-main {
+    padding: 0 !important;
+  }
+
+}
+
+/* =========================
+   🔥 FORCE GRID (FINAL FIX)
+========================= */
+
+#app {
+  display: grid !important; /* 👈 overrides flex */
+  gap: 20px;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  width: 90%;
+  margin: 40px auto;
+}
+
+/* =========================
+   🔥 HORIZONTAL SCROLL ROW
+========================= */
+
+#app {
+  display: flex;
+  gap: 20px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  padding: 20px;
+}
+
+/* each card */
+.news-card {
+  min-width: 280px;   /* 👈 controls how many fit */
+  flex: 0 0 auto;
+
+  scroll-snap-align: start;
+}
+
+/* =========================
+   🔥 SCROLL CARDS
+========================= */
+
+#app {
+  display: flex !important;
+  gap: 20px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  padding: 20px;
+}
+
+/* each card */
+.news-card {
+  min-width: 280px;
+  flex: 0 0 auto;
+
+  scroll-snap-align: start;
+}
+
+/* hide scrollbar */
+#app::-webkit-scrollbar {
+  display: none;
+}
+
+#app {
+  scrollbar-width: none;
+}
+
+
+
+/* =========================
+   🔥 SCROLL CARDS
+========================= */
+
+#app {
+  display: flex !important;
+  gap: 20px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  padding: 20px;
+}
+
+/* each card */
+.news-card {
+  min-width: 280px;
+  flex: 0 0 auto;
+
+  scroll-snap-align: start;
+}
+
+/* hide scrollbar */
+#app::-webkit-scrollbar {
+  display: none;
+}
+
+#app {
+  scrollbar-width: none;
+}
+
+/* arrow */
+.scroll-arrow {
+  text-align: right;
+  padding: 0 20px;
+  font-size: 24px;
+  color: #8b6f3d;
+  cursor: pointer;
+}
+
+/* container for arrows */
+.scroll-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 900px;
+  margin: 10px auto;
+}
+
+/* arrows */
+.scroll-arrow {
+  font-size: 24px;
+  color: #8b6f3d;
+  cursor: pointer;
+  user-select: none;
+}
+
+.scroll-controls {
+  position: relative;
+}
+
+.scroll-arrow.left {
+  position: absolute;
+  left: 0;
+}
+
+.scroll-arrow.right {
+  position: absolute;
+  right: 0;
+}
+
+/* =========================
+   🔥 FINAL CARD LAYOUT FIX
+   (OVERRIDES CHAOS ABOVE)
+========================= */
+
+/* 📱 MOBILE = SCROLL */
+@media (max-width: 768px) {
+
+  #app {
+    display: flex !important;
+    overflow-x: auto !important;
+    gap: 20px;
+    padding: 20px;
+
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .news-card {
+    min-width: 260px;
+    flex: 0 0 auto;
+  }
+
+}
+
+
+/* 💻 DESKTOP = GRID */
+@media (min-width: 769px) {
+
+  #app {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+
+    gap: 25px;
+    width: 90% !important;
+    margin: 40px auto !important;
+
+    overflow: visible !important;
+  }
+
+  .news-card {
+    min-width: unset !important;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  /* hide nav by default */
+  .nav-wrapper {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-wrapper.active {
+    display: block;
+  }
+
+  /* stack menu */
+  .nav-menu {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 20px;
+  }
+
+  /* each main item */
+  .nav-menu > li {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+  }
+
+  /* 🔥 SUBMENUS */
+  .nav-menu li ul {
+    display: none;
+    position: static;
+    padding-left: 15px;
+    margin-top: 8px;
+  }
+
+  /* when clicked */
+  .nav-menu li.active > ul {
+    display: block;
+  }
+
+  /* disable hover behavior on mobile */
+
+
+}
+
+@media (max-width: 768px) {
+
+
+  
+
+  /* hide submenus by default */
+  .nav-menu li ul {
+    display: none;
+    position: static;
+    padding-left: 15px;
+  }
+
+  /* show when clicked */
+  .nav-menu li.active > ul {
+    display: block;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+
+
+  /* hide submenus */
+  .nav-menu li ul {
+    display: none;
+    position: static;
+    padding-left: 15px;
+  }
+
+  /* show when active */
+  .nav-menu li.active > ul {
+    display: block;
+  }
+
+}
+
+.nav-bar {
+  position: relative;
+  z-index: 9999;
+}
+
+.site-header {
+  position: relative;
+  z-index: 9999;
+}
+
+
+
+/* 🔥 FINAL NAV FIX - NO HOVER EVER */
+
+@media (max-width: 768px) {
+  .nav-menu li ul {
+    display: none;
+    position: static;
+  }
+
+  .nav-menu li.open > ul {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+
+  .nav-menu li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    background: white;
+    min-width: 220px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: all 0.25s ease;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  .nav-menu li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+}
+
+@media (max-width: 768px) {
+
+@media (max-width: 768px) {
+  .nav-menu li ul {
+    display: none;
+    position: static;
+  }
+
+  .nav-menu li.open > ul {
+    display: block;
+  }
+}
+
+  .nav-menu li.open > ul {
+    display: block;
+  }
+
+}
+
+/* 🔥 REMOVE DROPDOWN ARROWS */
+.nav-menu li > a::after {
+  content: none !important;
+}
+
+/* 🔥 MAKE IMAGES FIT CONTENT AREA */
+.entry-content img,
+.wp-block-image img,
+.single img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 🔥 SCROLL ARROWS */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 50px;
+  height: 50px;
+
+  background: #c2a15a; /* your gold */
+  color: white;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+/* left + right positioning */
+#scrollLeft {
+  left: 10px;
+}
+
+#scrollRight {
+  right: 10px;
+}
+
+/* hover effect */
+.scroll-arrow:hover {
+  background: #a8843f;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* 🔥 CHEVRON ARROWS */
+.scroll-arrow {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* create the arrow using borders */
+.scroll-arrow::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+
+  border-top: 3px solid #a05a2c;   /* your brown/orange color */
+  border-right: 3px solid #a05a2c;
+
+  transform: rotate(45deg);
+}
+
+/* left arrow */
+#scrollLeft::before {
+  transform: rotate(-135deg);
+}
+
+/* right arrow */
+#scrollRight::before {
+  transform: rotate(45deg);
+}
+
+/* 🔥 FINAL ARROW RESET (OVERRIDES EVERYTHING ABOVE) */
+.scroll-arrow {
+  background: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/* 🔥 SIDE ARROWS */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* LEFT */
+#scrollLeft {
+  left: 10px;
+}
+
+/* RIGHT */
+#scrollRight {
+  right: 10px;
+} 
+
+#app {
+  position: relative;
+  z-index: 1;
+}
+
+#app {
+  padding: 20px 60px; /* 👈 space for arrows */
+} 
