@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
           card.innerHTML = `
             <h3>${post.title?.rendered || "No title"}</h3>
             <div class="news-content">
-              ${getFirstTwoSentences(post.excerpt?.rendered || "")}
+              ${getFirstChars(post.excerpt?.rendered || "", 140)}
             </div>
           `;
 
@@ -68,6 +68,26 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
+
+// =========================
+// ✂️ GET FIRST X CHARACTERS
+// =========================
+function getFirstChars(html, charLimit = 140) {
+
+  // strip HTML
+  const text = html.replace(/<[^>]+>/g, "").trim();
+
+  // cut to limit
+  let truncated = text.slice(0, charLimit);
+
+  // avoid cutting mid-word
+  truncated = truncated.slice(0, truncated.lastIndexOf(" "));
+
+  return `
+    <p>${truncated}${text.length > charLimit ? "..." : ""}</p>
+    <span class="read-more">Read more →</span>
+  `;
+}
 
   // =========================
   // ✨ HERO ANIMATION

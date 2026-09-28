@@ -1536,7 +1536,7 @@ body {
   color: #8b6f3d;
   font-size: 14px;
 }
-.
+
 .full-bar {
   width: 100vw;
   height: 20px;
@@ -1754,6 +1754,7 @@ img {
 
   .logo-circle {
     margin: 0 auto;
+    margin-top: 20px;
   }
 
   .header-title {
@@ -2051,14 +2052,7 @@ html, body {
   scrollbar-width: none;
 }
 
-/* arrow */
-.scroll-arrow {
-  text-align: right;
-  padding: 0 20px;
-  font-size: 24px;
-  color: #8b6f3d;
-  cursor: pointer;
-}
+
 
 /* =========================
    🔥 SCROLL CARDS
@@ -2342,3 +2336,119 @@ html, body {
   height: auto;
   display: block;
 }
+
+/* 🔥 SCROLL ARROWS */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 50px;
+  height: 50px;
+
+  background: #c2a15a; /* your gold */
+  color: white;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+/* left + right positioning */
+#scrollLeft {
+  left: 10px;
+}
+
+#scrollRight {
+  right: 10px;
+}
+
+/* hover effect */
+.scroll-arrow:hover {
+  background: #a8843f;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* 🔥 CHEVRON ARROWS */
+.scroll-arrow {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* create the arrow using borders */
+.scroll-arrow::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+
+  border-top: 3px solid #a05a2c;   /* your brown/orange color */
+  border-right: 3px solid #a05a2c;
+
+  transform: rotate(45deg);
+}
+
+/* left arrow */
+#scrollLeft::before {
+  transform: rotate(-135deg);
+}
+
+/* right arrow */
+#scrollRight::before {
+  transform: rotate(45deg);
+}
+
+/* 🔥 FINAL ARROW RESET (OVERRIDES EVERYTHING ABOVE) */
+.scroll-arrow {
+  background: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/* 🔥 SIDE ARROWS */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* LEFT */
+#scrollLeft {
+  left: 10px;
+}
+
+/* RIGHT */
+#scrollRight {
+  right: 10px;
+} 
+
+#app {
+  position: relative;
+  z-index: 1;
+}
+
+#app {
+  padding: 20px 60px; /* 👈 space for arrows */
+} 

@@ -17,9 +17,9 @@
         </div>
 
         <div class="hero-buttons">
-          <a href="#" class="btn primary">Pay Water Bill</a>
-          <a href="#" class="btn primary">Town Board</a>
-          <a href="#" class="btn primary">Calendar</a>
+          <a href="https://secure.colorado.gov/payment/jamestownco" class="btn primary">Pay Water Bill</a>
+          <a href="https://jamestownco.org/town-board/" class="btn primary">Town Board</a>
+          <a href="https://jamestownco.org/calendar/" class="btn primary">Calendar</a>
         </div>
 
       </div>
@@ -36,8 +36,9 @@
   <div class="news-row" id="app"></div>
 
   <div class="scroll-controls">
-  <div class="scroll-arrow left" id="scrollLeft">←</div>
-  <div class="scroll-arrow right" id="scrollRight">→</div>
+    <div class="scroll-arrow left" id="scrollLeft"></div>
+<div class="scroll-arrow right" id="scrollRight"></div>
+<br><br>
 </div>
 
 </section>
